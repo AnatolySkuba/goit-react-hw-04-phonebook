@@ -5,7 +5,9 @@ import Filter from 'components/Filter/Filter';
 import ContactForm from 'components/ContactForm/ContactForm';
 
 export default function App() {
-  const [contacts, setContacts] = useLocalStorage(JSON.parse(localStorage.getItem('contacts')) || []);
+  const [contacts, setContacts] = useState(
+    JSON.parse(localStorage.getItem('contacts')) || []
+  );
   const [filter, setFilter] = useState('');
 
   const formSubmitHandler = (name, number) => {
